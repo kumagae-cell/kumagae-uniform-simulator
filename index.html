@@ -77,7 +77,7 @@ function page1(a){
  <li>商品を選択すると、最後に<b>合計金額</b>が表示されます。</li>
  <li>実際の販売価格は、<b>商品種類や着数によって異なる場合がございますので目安としてお考え下さい。</b></li>
  <li>このシミュレーターでは、<b>注文・予約はできません。</b></li></ul></div>
- <div class="nav"><button class="next" onclick="state.page=2;render()">シミュレーションを始める →</button></div></div>`;
+ <div class="nav"><button class="next" onclick="state.page=2;render();window.scrollTo(0,0)">シミュレーションを始める →</button></div></div>`;
 }
 function page2(a){
  a.innerHTML=`<div class="header">STEP 2　早期早割の受付状況</div><div class="content">
@@ -298,7 +298,7 @@ function resetSimulator(){
  Object.assign(state,{page:1,discount:null,purchaseType:null,gender:null,blazer:null,blazerFemale:null,slacks:null,femaleBottom:null,noAnswerBlazer:null,noAnswerBottom:null,accessories:{},accessoryNone:false});
  render();
 }
-function back(){if(state.page>1){state.page--;render();}}
+function back(){if(state.page>1){state.page--;render();window.scrollTo(0,0);}}
 function next(){
  if(state.page===2&&!state.discount){alert("早期早割の受付状況を選択してください。");return;}
  if(state.page===3&&!state.purchaseType){alert("購入内容を選択してください。");return;}
@@ -322,7 +322,7 @@ function next(){
   const accessoryCount=Object.values(state.accessories).reduce((sum,q)=>sum+Number(q),0);
   if(!state.accessoryNone && accessoryCount===0){alert("付属品を選択するか、「購入しない」を選択してください。");return;}
  }
- if(state.page<9){state.page++;render();}
+ if(state.page<9){state.page++;render();window.scrollTo(0,0);}
 }
 render();
 </script></body></html>
