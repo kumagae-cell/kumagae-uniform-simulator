@@ -258,6 +258,7 @@ function page8Accessories(a){
  const count=Object.values(state.accessories).reduce((sum,q)=>sum+Number(q),0);
  a.innerHTML=`<div class="header">STEP 8　付属品を選択してください</div><div class="content">
  <div class="lead"><b>付属品は25%OFF</b><br>必要な付属品があれば、数量を「＋」「−」で選択してください。</div>
+ <div style="margin:12px 0 16px;padding:14px 16px;border-radius:10px;background:#fff8e6;border:1px solid #f0d58a;line-height:1.7;font-size:14px;"><b>ご確認ください</b><br>ネクタイ・リボンや学校指定のシャツ以外は指定ものではないので、必ず購入しないといけないものではありません。必要なものや必ずご利用されるもののみお選びください。</div>
  <div class="accessory-none-wrap"><button type="button" class="accessory-none-btn ${state.accessoryNone?'selected':''}" onclick="setAccessoryNone()"><span>購入しない</span><small>付属品を購入しない場合はこちら</small></button></div>
  ${section("割引対象商品",target)}
  ${section("割引対象外商品",exempt,true)}
